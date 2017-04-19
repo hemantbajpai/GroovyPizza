@@ -1,0 +1,5 @@
+rootProject.name = 'GroovyPizza'
+
+include 'Order'
+
+project(':Order').projectDir = new File('C:\\Users\\HI7\\IdeaProjects\\Order')
