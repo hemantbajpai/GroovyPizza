@@ -84,7 +84,7 @@ img {
 }
 
 .footer {
-    background: #48802c;
+    background: #b01717;
     color: #000;
     clear: both;
     font-size: 0.8em;
@@ -120,13 +120,13 @@ img {
     zoom: 1;
 }
 
-.nav li {
+/*.nav li {
     display: block;
     float: left;
     list-style-type: none;
     margin-right: 0.5em;
     padding: 0;
-}
+}*/
 
 .nav a {
     color: #666666;

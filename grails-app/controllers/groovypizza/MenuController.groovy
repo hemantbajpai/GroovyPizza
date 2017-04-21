@@ -25,7 +25,7 @@ class MenuController {
 
     @Secured([Role.ROLE_USER,Role.ROLE_ADMIN,Role.ROLE_ANONYMOUS])
     def menu() {
-        render view: 'menu', model: [pizzas: Menu.first().pizzas]
+        render view: 'menu', model: [pizzas: Menu.first().pizzas, sides: Menu.first().sides, desserts: Menu.first().desserts, drinks: Menu.first().drinks]
     }
 
     def create() {

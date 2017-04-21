@@ -2,6 +2,7 @@ package groovypizza
 
 class Side {
 
+    int price
     String name
     String type
     String description

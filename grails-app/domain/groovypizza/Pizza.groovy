@@ -7,6 +7,7 @@ class Pizza {
     String type
     List<Topping> toppingList
     Nutrition nutrition
+    int price
 
     static belongsTo = [menu: Menu]
     static hasMany = [feedbacks: Feedback]

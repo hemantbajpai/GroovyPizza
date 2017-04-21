@@ -15,7 +15,7 @@ class BootStrap {
 
         UserRole.create(admin, adminRole).save(flush:true, failOnError:true)
 
-        Menu menu = new Menu(pizzas: [])
+        Menu menu = new Menu(pizzas: [], sides: [], desserts: [], drinks: [])
 
         Pizza beef = new Pizza(name: "Beef", description: "description", type: "nonveg", nutrition: new Nutrition(), menu: menu)
         menu.pizzas << beef
@@ -52,6 +52,42 @@ class BootStrap {
 
         Pizza veggielover = new Pizza(name: "Veggielover", description: "description11", type: "veg", nutrition: new Nutrition(), menu: menu)
         menu.pizzas << veggielover
+
+        Side fries = new Side(name: "Fries", description: "description", type: "veg", nutrition: new Nutrition(), menu: menu)
+        menu.sides << fries
+
+        Side onionRings = new Side(name: "Onion Rings", description: "description1", type: "veg", nutrition: new Nutrition(), menu: menu)
+        menu.sides << onionRings
+
+        Side gralicBread = new Side(name: "Garlic Bread", description: "description2", type: "veg", nutrition: new Nutrition(), menu: menu)
+        menu.sides << gralicBread
+
+        Side stuffedGarlicBreadstick = new Side(name: "Stuffed Garlic Breadstick", description: "description3", type: "veg", nutrition: new Nutrition(), menu: menu)
+        menu.sides << stuffedGarlicBreadstick
+
+        Dessert blueberryPie = new Dessert(name:"Blueberry Pie", description: "description", nutrition: new Nutrition(), menu: menu)
+        menu.desserts << blueberryPie
+
+        Dessert brownies = new Dessert(name: "Brownies", description: "description1", nutrition: new Nutrition(), menu: menu)
+        menu.desserts << brownies
+
+        Dessert cheesecake = new Dessert(name: "Cheesecake", description: "description2", nutrition: new Nutrition(), menu: menu)
+        menu.desserts << cheesecake
+
+        Dessert strawberryPie = new Dessert(name:"Strawberry Pie", description: "description3", nutrition: new Nutrition(), menu: menu)
+        menu.desserts << strawberryPie
+
+        Drink bellaBellini = new Drink(name: "Bella Bellini", menu: menu)
+        menu.drinks << bellaBellini
+
+        Drink blueShoe = new Drink(name:"Blue Shoe", menu: menu)
+        menu.drinks << blueShoe
+
+        Drink cuddlesOnTheBeach = new Drink(name: "Cuddles On The Beach", menu: menu)
+        menu.drinks << cuddlesOnTheBeach
+
+        Drink hurricaneMocktail = new Drink(name: "Hurricane Mocktail", menu: menu)
+        menu.drinks << hurricaneMocktail
 
         menu.save(flush:true,failOnError:true)
     }

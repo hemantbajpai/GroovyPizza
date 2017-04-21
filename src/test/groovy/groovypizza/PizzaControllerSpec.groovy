@@ -10,9 +10,7 @@ class PizzaControllerSpec extends Specification {
     def populateValidParams(params) {
         assert params != null
 
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
-        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        params << [name:"pizza", description: "description", type: "veg", nutrition: new Nutrition(), menu: new Menu()]
     }
 
     void "Test the index action returns the correct model"() {

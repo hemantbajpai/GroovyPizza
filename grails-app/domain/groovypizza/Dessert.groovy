@@ -5,6 +5,7 @@ class Dessert {
     String name
     String description
     Nutrition nutrition
+    int price
 
     static belongsTo = [menu: Menu]
     static hasMany = [feedbacks: Feedback]
