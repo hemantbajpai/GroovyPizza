@@ -10,7 +10,7 @@ class SideControllerSpec extends Specification {
     def populateValidParams(params) {
         assert params != null
 
-        params << [name:"pizza", description: "description", type: "veg", nutrition: new Nutrition(), menu: new Menu()]
+        params << [name:"pizza", description: "description", type: "veg", price:5,nutrition: new Nutrition(), menu: new Menu()]
     }
 
     void "Test the index action returns the correct model"() {

@@ -13,5 +13,6 @@ class Feedback {
 
     static constraints = {
         rating max: 5, min: 1
+        text blank:false
     }
 }

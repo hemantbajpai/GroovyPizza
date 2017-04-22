@@ -10,7 +10,7 @@ class DrinkControllerSpec extends Specification {
     def populateValidParams(params) {
         assert params != null
 
-        params << [name:"pizza", menu: new Menu()]
+        params << [name:"pizza", description: "description", price: 5, menu: new Menu()]
     }
 
     void "Test the index action returns the correct model"() {

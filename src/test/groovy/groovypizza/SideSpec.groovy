@@ -17,7 +17,7 @@ class SideSpec extends Specification {
 
     void "Side name can not be blank and should be unique"() {
         when:
-            Side side = new Side(name: "", description: "description", type: "veg", nutrition: new Nutrition(), menu: new Menu())
+            Side side = new Side(name: "", description: "description", type: "veg", price:5,nutrition: new Nutrition(), menu: new Menu())
             side.save(flush:true)
         then:
             !side.validate()
@@ -27,7 +27,7 @@ class SideSpec extends Specification {
         then:
             side.validate()
         when:
-            Side side1 = new Side(name: "name", description: "description1", type: "veg", nutrition: new Nutrition(), menu: new Menu())
+            Side side1 = new Side(name: "name", description: "description1", type: "veg", price:5,nutrition: new Nutrition(), menu: new Menu())
             side1.save(flush:true)
         then:
             !side1.validate()
@@ -40,7 +40,7 @@ class SideSpec extends Specification {
 
     void "Side description can not be blank and should be unique"() {
         when:
-            Side side = new Side(name: "name", description: "", type: "veg", nutrition: new Nutrition(), menu: new Menu())
+            Side side = new Side(name: "name", description: "", type: "veg", price:5,nutrition: new Nutrition(), menu: new Menu())
             side.save(flush:true)
         then:
             !side.validate()
@@ -50,7 +50,7 @@ class SideSpec extends Specification {
         then:
             side.validate()
         when:
-            Side side1 = new Side(name: "name1", description: "description", type: "veg", nutrition: new Nutrition(), menu: new Menu())
+            Side side1 = new Side(name: "name1", description: "description", price:5,type: "veg", nutrition: new Nutrition(), menu: new Menu())
             side1.save(flush:true)
         then:
             !side1.validate()
@@ -63,7 +63,7 @@ class SideSpec extends Specification {
 
     void "Side type could be veg or nonveg" () {
         when:
-            Side side = new Side(name: "name", description: "description", type: "random", nutrition: new Nutrition(), menu: new Menu())
+            Side side = new Side(name: "name", description: "description", price:5,type: "random", nutrition: new Nutrition(), menu: new Menu())
             side.save(flush:true)
         then:
             !side.validate()
@@ -81,7 +81,7 @@ class SideSpec extends Specification {
 
     void "Side should have a menu" () {
         when:
-            Side side = new Side(name: "name", description: "description", type: "veg", nutrition: new Nutrition())
+            Side side = new Side(name: "name", description: "description", price:5,type: "veg", nutrition: new Nutrition())
             side.save(flush:true)
         then:
             !side.validate()
@@ -94,12 +94,25 @@ class SideSpec extends Specification {
 
     void "Side should have a nutrition" () {
         when:
-            Side side = new Side(name: "name", description: "description", type: "veg", menu : new Menu())
+            Side side = new Side(name: "name", description: "description", price:5,type: "veg", menu : new Menu())
             side.save(flush:true)
         then:
             !side.validate()
         when:
             side.nutrition = new Nutrition()
+            side.save(flush:true)
+        then:
+            side.validate()
+    }
+
+    void "price can not be negative" () {
+        when:
+            Side side = new Side(name: "name", description: "description", price:-1,type: "veg", menu : new Menu(), nutrition: new Nutrition())
+            side.save(flush:true)
+        then:
+            !side.validate()
+        when:
+            side.price = 5
             side.save(flush:true)
         then:
             side.validate()

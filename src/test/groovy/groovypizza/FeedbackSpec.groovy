@@ -28,4 +28,30 @@ class FeedbackSpec extends Specification {
         then:
             feedback.validate()
     }
+
+    void "text cannot be blank" () {
+        when:
+            Feedback feedback = new Feedback(user: new User(), dateCreated: new Date(), text: "", rating: 5)
+            feedback.save(flush: true)
+        then:
+            !feedback.validate()
+        when:
+            feedback.text = "text"
+            feedback.save(flush:true)
+        then:
+            feedback.validate()
+    }
+
+    void "text should have user" () {
+        when:
+            Feedback feedback = new Feedback( dateCreated: new Date(), text: "text", rating: 5)
+            feedback.save(flush: true)
+        then:
+            !feedback.validate()
+        when:
+            feedback.user = new User()
+            feedback.save(flush:true)
+        then:
+            feedback.validate()
+    }
 }

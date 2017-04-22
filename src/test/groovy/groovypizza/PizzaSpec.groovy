@@ -17,7 +17,7 @@ class PizzaSpec extends Specification {
 
     void "Pizza name can not be blank and should be unique"() {
         when:
-            Pizza pizza = new Pizza(name: "", description: "description", type: "veg", nutrition: new Nutrition(), menu: new Menu())
+            Pizza pizza = new Pizza(name: "", description: "description",  price: 5,type: "veg", nutrition: new Nutrition(), menu: new Menu())
             pizza.save(flush:true)
         then:
             !pizza.validate()
@@ -27,7 +27,7 @@ class PizzaSpec extends Specification {
         then:
             pizza.validate()
         when:
-            Pizza pizza1 = new Pizza(name: "name", description: "description1", type: "veg", nutrition: new Nutrition(), menu: new Menu())
+            Pizza pizza1 = new Pizza(name: "name", description: "description1",  price: 5,type: "veg", nutrition: new Nutrition(), menu: new Menu())
             pizza1.save(flush:true)
         then:
             !pizza1.validate()
@@ -40,7 +40,7 @@ class PizzaSpec extends Specification {
 
     void "Pizza descrition can not be blank and should be unique"() {
         when:
-            Pizza pizza = new Pizza(name: "name", description: "", type: "veg", nutrition: new Nutrition(), menu: new Menu())
+            Pizza pizza = new Pizza(name: "name", description: "", type: "veg",  price: 5,nutrition: new Nutrition(), menu: new Menu())
             pizza.save(flush:true)
         then:
             !pizza.validate()
@@ -50,7 +50,7 @@ class PizzaSpec extends Specification {
         then:
             pizza.validate()
         when:
-            Pizza pizza1 = new Pizza(name: "name1", description: "description", type: "veg", nutrition: new Nutrition(), menu: new Menu())
+            Pizza pizza1 = new Pizza(name: "name1", description: "description",  price: 5,type: "veg", nutrition: new Nutrition(), menu: new Menu())
             pizza1.save(flush:true)
         then:
             !pizza1.validate()
@@ -63,7 +63,7 @@ class PizzaSpec extends Specification {
 
     void "Pizza type could be veg or nonveg" () {
         when:
-            Pizza pizza = new Pizza(name: "name", description: "description", type: "random", nutrition: new Nutrition(), menu: new Menu())
+            Pizza pizza = new Pizza(name: "name", description: "description",  price: 5,type: "random", nutrition: new Nutrition(), menu: new Menu())
             pizza.save(flush:true)
         then:
             !pizza.validate()
@@ -81,7 +81,7 @@ class PizzaSpec extends Specification {
 
     void "Pizza should have a menu" () {
         when:
-            Pizza pizza = new Pizza(name: "name", description: "description", type: "veg", nutrition: new Nutrition())
+            Pizza pizza = new Pizza(name: "name", description: "description",  price: 5,type: "veg", nutrition: new Nutrition())
             pizza.save(flush:true)
         then:
             !pizza.validate()
@@ -94,12 +94,25 @@ class PizzaSpec extends Specification {
 
     void "Pizza should have a nutrition" () {
         when:
-            Pizza pizza = new Pizza(name: "name", description: "description", type: "veg", menu : new Menu())
+            Pizza pizza = new Pizza(name: "name", description: "description",  price: 5,type: "veg", menu : new Menu())
             pizza.save(flush:true)
         then:
             !pizza.validate()
         when:
             pizza.nutrition = new Nutrition()
+            pizza.save(flush:true)
+        then:
+            pizza.validate()
+    }
+
+    void "price can not be negative" () {
+        when:
+            Pizza pizza = new Pizza(name: "name", description: "description",  price: -1,type: "veg", menu : new Menu(), nutrition: new Nutrition())
+            pizza.save(flush:true)
+        then:
+            !pizza.validate()
+        when:
+            pizza.price = 5
             pizza.save(flush:true)
         then:
             pizza.validate()

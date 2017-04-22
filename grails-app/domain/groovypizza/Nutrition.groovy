@@ -18,7 +18,6 @@ class Nutrition {
     double vitaminB6
     double vitaminB12
     double vitaminA
-    double vitaminE
     double vitaminD
     double fatSaturated
     double fatMono
