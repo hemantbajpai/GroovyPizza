@@ -8,7 +8,9 @@ class UrlMappings {
                 // apply constraints here
             }
         }
+        "/signup"(controller: "MyOrder", action: "signup")
         "/menu"(controller: "Menu", action: "menu")
+        "/mycurrentorder"(controller: "MyOrder", action: "myCurrentOrder")
         "/"(view:"/index")
         "500"(view:'/error')
         "404"(view:'/notFound')

@@ -29,7 +29,7 @@
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="/menu">Menu</a></li>
                     <li><a href="/search">Search</a></li>
-                    <li><a href="/myorder">My Order</a></li>
+                    <li><a href="/mycurrentorder">My Order</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <sec:ifLoggedIn>
@@ -42,6 +42,7 @@
                         </li>
                     </sec:ifLoggedIn>
                     <sec:ifNotLoggedIn>
+                        <li><a href="/signup">Sign Up</a></li>
                         <li>
                             <g:link controller="login" action="index">login</g:link>
                         </li>

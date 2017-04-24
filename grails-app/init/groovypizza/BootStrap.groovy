@@ -7,11 +7,14 @@ import order.UserRole
 class BootStrap {
 
     def init = { servletContext ->
-        User admin = new User(username: 'admin', password: 'secret', firstName: "admin", lastName: "admin", addressLine1: "10 pl st", addressLine2: "apt#10", city: "arlington", state: "MA", zipcode: "02476", creditCard: "4488741235762723", expiryDate: new Date(2017, 12, 12), enabled: true)
+        User admin = new User(username: 'admin', password: 'secret', firstName: "admin", lastName: "admin", addressLine1: "10 pl st", addressLine2: "apt#10", city: "arlington", state: "MA", zipcode: "02476", creditCard: "4488741235762723", expiryDate: new Date(2017, 12, 12), orders: [], enabled: true)
         admin.save(flush:true,failOnError:true)
 
         Role adminRole = new Role(authority: Role.ROLE_ADMIN)
         adminRole.save(flush:true,failOnError:true)
+
+        Role userRole = new Role(authority: Role.ROLE_USER)
+        userRole.save(flush:true,failOnError:true)
 
         UserRole.create(admin, adminRole).save(flush:true, failOnError:true)
 

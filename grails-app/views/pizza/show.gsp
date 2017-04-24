@@ -17,11 +17,16 @@
     <body>
 
     <div class="pizzapage">
-        <img src="${resource(dir:"images", file: "${pizza.name + ".png"}") }"/> <br> <h1> ${pizza.name}</h1>
+        <img src="${resource(dir:"images", file: "${pizza.name + ".png"}") }" style="width:600px;height:600px;border:0;"/> <br> <h1> ${pizza.name}</h1>
         <br><h2> Description: ${pizza.description} </h2>
         <h4><br> Price: $ ${pizza.price}  </h4>
 
         <h4><br><a data-toggle="modal" data-target="#createModal">Nutrition Facts</a></h4>
+
+        <br>
+        <g:form controller="MyOrder" params="[name:pizza.name, price:pizza.price]">
+            <g:actionSubmit value="Add to Order" action="addToOrder"/>
+        </g:form>
     </div>
 
         <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
