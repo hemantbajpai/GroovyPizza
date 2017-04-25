@@ -22,6 +22,11 @@
         <h4><br> Price: $ ${dessert.price}  </h4>
 
         <h4><br><a data-toggle="modal" data-target="#createModal">Nutrition Facts</a></h4>
+
+        <br>
+        <g:form controller="MyOrder" params="[name:dessert.name, price:dessert.price]">
+            <g:actionSubmit value="Add to Order" action="addToOrder"/>
+        </g:form>
     </div>
 
     <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

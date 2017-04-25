@@ -20,6 +20,11 @@
         <img src="${resource(dir:"images", file: "${drink.name + ".jpg"}") }" style="width:600px;height:600px;border:0;"/> <br> <h1> ${drink.name}</h1>
         <br><h2> Description: ${drink.description} </h2>
         <h4><br> Price: $ ${drink.price}  </h4>
+
+        <br>
+        <g:form controller="MyOrder" params="[name:drink.name, price:drink.price]">
+            <g:actionSubmit value="Add to Order" action="addToOrder"/>
+        </g:form>
     </div>
 
     </body>

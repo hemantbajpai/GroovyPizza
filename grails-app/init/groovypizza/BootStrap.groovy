@@ -17,6 +17,7 @@ class BootStrap {
         userRole.save(flush:true,failOnError:true)
 
         UserRole.create(admin, adminRole).save(flush:true, failOnError:true)
+        UserRole.create(admin, userRole).save(flush:true, failOnError:true)
 
         Menu menu = new Menu(pizzas: [], sides: [], desserts: [], drinks: [])
 
