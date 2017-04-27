@@ -23,62 +23,62 @@ class BootStrap {
 
         String description = "This is perfect pizza for beef lovers. It is perfect meat ingredient cooked pizza. It is cooked with tomato sauce and real cheese surrounded by a garlic butter crispy crust."
         Nutrition nutrition = new Nutrition(weight: 107, calories: 285, protein: 12,fat: 10.0, carbohydrate: 36, fiber: 2.5, sugar: 3.8, calcium: 20, iron: 15, magnesium: 6, potassium: 184, sodium: 640, vitaminC: 2, vitaminB6: 5, vitaminB12: 6, vitaminA: 7, vitaminD: 0, fatSaturated: 4.0, fatPoly: 1.8, fatMono: 2.8, cholesterol: 16)
-        Pizza beef = new Pizza(name: "Beef", price: 11, description: description, type: "nonveg", nutrition: nutrition, menu: menu)
+        Pizza beef = new Pizza(name: "Beef", price: 11, description: description, type: "nonveg", nutrition: nutrition, menu: menu, feedbacks: [])
         menu.pizzas << beef
 
         description = "This is delicious pizza. It is made of tomato sauce, real cheese and traditional garlic buttery crust."
         nutrition = new Nutrition(weight: 100, calories: 185, protein: 10,fat: 8.0, carbohydrate: 25, fiber: 2.4, sugar: 3.6, calcium: 22, iron: 14, magnesium: 8, potassium: 180, sodium: 650, vitaminC: 3, vitaminB6: 6, vitaminB12: 6, vitaminA: 8, vitaminD: 0, fatSaturated: 4.1, fatPoly: 1.9, fatMono: 2.9, cholesterol: 15)
-        Pizza cheese = new Pizza(name: "Cheese", price: 8, description: description, type: "veg", nutrition: nutrition, menu: menu)
+        Pizza cheese = new Pizza(name: "Cheese", price: 8, description: description, type: "veg", nutrition: nutrition, menu: menu, feedbacks: [])
         menu.pizzas << cheese
 
         description = "Chicken piiza has garlic crust topped with buffalo sauce, real cheese and premium chicken, drizzled with buffalo sauce"
         nutrition = new Nutrition(weight: 102, calories: 225, protein: 11,fat: 9.0, carbohydrate: 28, fiber: 2.5, sugar: 3.7, calcium: 21, iron: 13, magnesium: 7, potassium: 181, sodium: 640, vitaminC: 1, vitaminB6: 7, vitaminB12: 7, vitaminA: 9, vitaminD: 0, fatSaturated: 4.1, fatPoly: 1.7, fatMono: 2.7, cholesterol: 18)
-        Pizza chicken = new Pizza(name: "Chicken", price: 9, description: description, type: "nonveg", nutrition: nutrition, menu: menu)
+        Pizza chicken = new Pizza(name: "Chicken", price: 9, description: description, type: "nonveg", nutrition: nutrition, menu: menu, feedbacks: [])
         menu.pizzas << chicken
 
         description = "Ham & Cheddar pizza has garlic butter crust topped with paresan ranch sauce, real cheese, real cheddar and slice ham"
         nutrition = new Nutrition(weight: 105, calories: 255, protein: 12,fat: 10.0, carbohydrate: 30, fiber: 2.8, sugar: 3.5, calcium: 22, iron: 15, magnesium: 6, potassium: 182, sodium: 655, vitaminC: 2, vitaminB6: 5, vitaminB12: 6, vitaminA: 7, vitaminD: 0, fatSaturated: 4.1, fatPoly: 1.8, fatMono: 2.8, cholesterol: 20)
-        Pizza hamcheddar = new Pizza(name: "Ham Cheddar", price: 12, description: description, type: "nonveg", nutrition: nutrition, menu: menu)
+        Pizza hamcheddar = new Pizza(name: "Ham Cheddar", price: 12, description: description, type: "nonveg", nutrition: nutrition, menu: menu, feedbacks: [])
         menu.pizzas << hamcheddar
 
         description = "This is perfect pizza for meat lovers. It has real cheese, pepperoni, ham, beef and sausage surrounded by a garlic butter crispy crust"
         nutrition = new Nutrition(weight: 106, calories: 305, protein: 13,fat: 11.0, carbohydrate: 32, fiber: 2.9, sugar: 3.6, calcium: 24, iron: 12, magnesium: 8, potassium: 180, sodium: 670, vitaminC: 2, vitaminB6: 6, vitaminB12: 7, vitaminA: 8, vitaminD: 0, fatSaturated: 4.2, fatPoly: 1.9, fatMono: 2.7, cholesterol: 22)
-        Pizza meateater = new Pizza(name: "Meat Eater", price: 15, description: description, type: "nonveg", nutrition: nutrition, menu: menu)
+        Pizza meateater = new Pizza(name: "Meat Eater", price: 15, description: description, type: "nonveg", nutrition: nutrition, menu: menu, feedbacks: [])
         menu.pizzas << meateater
 
         description = "Pepperoni pizza is made up of tomato sauce with real cheese surrounded by a traditional garlic buttery crust"
         nutrition = new Nutrition(weight: 105, calories: 295, protein: 12,fat: 10.0, carbohydrate: 36, fiber: 2.5, sugar: 3.8, calcium: 20, iron: 15, magnesium: 6, potassium: 184, sodium: 640, vitaminC: 2, vitaminB6: 5, vitaminB12: 6, vitaminA: 7, vitaminD: 0, fatSaturated: 4.0, fatPoly: 1.8, fatMono: 2.8, cholesterol: 16)
-        Pizza pepperoni = new Pizza(name: "Pepperoni", price: 12, description: description, type: "nonveg", nutrition: nutrition, menu: menu)
+        Pizza pepperoni = new Pizza(name: "Pepperoni", price: 12, description: description, type: "nonveg", nutrition: nutrition, menu: menu, feedbacks: [])
         menu.pizzas << pepperoni
 
         description = "This is good pizza for meat lovers. It has pepperoni and sausage. This is made up of real cheese surrounded by garlic buttery crust"
         nutrition = new Nutrition(weight: 110, calories: 220, protein: 12,fat: 9.0, carbohydrate: 25, fiber: 2.4, sugar: 3.6, calcium: 22, iron: 14, magnesium: 8, potassium: 180, sodium: 650, vitaminC: 3, vitaminB6: 6, vitaminB12: 6, vitaminA: 8, vitaminD: 0, fatSaturated: 4.1, fatPoly: 1.9, fatMono: 2.9, cholesterol: 15)
-        Pizza pepperonisausage = new Pizza(name: "Pepperoni Sausage", price: 14, description: description, type: "nonveg", nutrition: nutrition, menu: menu)
+        Pizza pepperonisausage = new Pizza(name: "Pepperoni Sausage", price: 14, description: description, type: "nonveg", nutrition: nutrition, menu: menu, feedbacks: [])
         menu.pizzas << pepperonisausage
 
         description = "Pork pizza has some sweet and tangy honey BBQ sauce, deliciously seasoned pork and plenty of real mozzarella cheese all surrounded by golden buttery crust"
         nutrition = new Nutrition(weight: 105, calories: 202, protein: 11,fat: 9.0, carbohydrate: 28, fiber: 2.5, sugar: 3.7, calcium: 21, iron: 13, magnesium: 7, potassium: 181, sodium: 640, vitaminC: 1, vitaminB6: 7, vitaminB12: 7, vitaminA: 9, vitaminD: 0, fatSaturated: 4.1, fatPoly: 1.7, fatMono: 2.7, cholesterol: 18)
-        Pizza pork = new Pizza(name: "Pork", price: 12, description: description, type: "nonveg", nutrition: nutrition, menu: menu)
+        Pizza pork = new Pizza(name: "Pork", price: 12, description: description, type: "nonveg", nutrition: nutrition, menu: menu, feedbacks: [])
         menu.pizzas << pork
 
         description = "Sausage pizza has tomato sauce with italian style sausage with real cheese and traditional garlic crust"
         nutrition = new Nutrition(weight: 110, calories: 190, protein: 12,fat: 7.0, carbohydrate: 30, fiber: 2.8, sugar: 3.5, calcium: 22, iron: 15, magnesium: 6, potassium: 182, sodium: 655, vitaminC: 2, vitaminB6: 5, vitaminB12: 6, vitaminA: 7, vitaminD: 0, fatSaturated: 4.1, fatPoly: 1.8, fatMono: 2.8, cholesterol: 20)
-        Pizza sausage = new Pizza(name: "Sausage", price: 12, description: description, type: "nonveg", nutrition: nutrition, menu: menu)
+        Pizza sausage = new Pizza(name: "Sausage", price: 12, description: description, type: "nonveg", nutrition: nutrition, menu: menu, feedbacks: [])
         menu.pizzas << sausage
 
         description = "This pizza has perfect amount spinach blended and cooked with real cheese and surrounded by traditional garlic butter on the crust"
         nutrition = new Nutrition(weight: 95, calories: 160, protein: 13,fat: 11.0, carbohydrate: 32, fiber: 2.9, sugar: 3.6, calcium: 24, iron: 12, magnesium: 8, potassium: 180, sodium: 670, vitaminC: 2, vitaminB6: 6, vitaminB12: 7, vitaminA: 8, vitaminD: 0, fatSaturated: 4.2, fatPoly: 1.9, fatMono: 2.7, cholesterol: 22)
-        Pizza spinachalfredo = new Pizza(name: "Spinach Alfredo", price: 10, description: description, type: "veg", nutrition: nutrition, menu: menu)
+        Pizza spinachalfredo = new Pizza(name: "Spinach Alfredo", price: 10, description: description, type: "veg", nutrition: nutrition, menu: menu, feedbacks: [])
         menu.pizzas << spinachalfredo
 
         description = "Veggie pizza has tomato sauce, real cheese, red onions, green peppers, mushrooms and black olives"
         nutrition = new Nutrition(weight: 92, calories: 150, protein: 12,fat: 10.0, carbohydrate: 36, fiber: 2.5, sugar: 3.8, calcium: 20, iron: 15, magnesium: 6, potassium: 184, sodium: 640, vitaminC: 2, vitaminB6: 5, vitaminB12: 6, vitaminA: 7, vitaminD: 0, fatSaturated: 4.0, fatPoly: 1.8, fatMono: 2.8, cholesterol: 16)
-        Pizza veggie = new Pizza(name: "Veggie", price: 10, description: description, type: "veg", nutrition: nutrition, menu: menu)
+        Pizza veggie = new Pizza(name: "Veggie", price: 10, description: description, type: "veg", nutrition: nutrition, menu: menu, feedbacks: [])
         menu.pizzas << veggie
 
         description = "This is perfect pizza for veggie lovers. It has parmesan sauce, real cheddar cheese, mushroomsm red onion, green peppers, tomatoes and permesan seasoning"
         nutrition = new Nutrition(weight: 95, calories: 155, protein: 11,fat: 9.0, carbohydrate: 28, fiber: 2.5, sugar: 3.7, calcium: 21, iron: 13, magnesium: 7, potassium: 181, sodium: 640, vitaminC: 1, vitaminB6: 7, vitaminB12: 7, vitaminA: 9, vitaminD: 0, fatSaturated: 4.1, fatPoly: 1.7, fatMono: 2.7, cholesterol: 18)
-        Pizza veggielover = new Pizza(name: "Veggie Lover", price: 11, description: description, type: "veg", nutrition: nutrition, menu: menu)
+        Pizza veggielover = new Pizza(name: "Veggie Lover", price: 11, description: description, type: "veg", nutrition: nutrition, menu: menu, feedbacks: [])
         menu.pizzas << veggielover
 
         description = "Crispy and salted fries which you will love to have"
