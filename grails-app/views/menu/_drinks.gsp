@@ -22,26 +22,34 @@
     <table>
         <tbody>
         <tr>
+            <g:if test="${drinks.size() >= 1}">
             <td>
                 <a href="/drink/show/${drinks[0].id}"><img src="${resource(dir:"images", file: "${drinks[0].name + ".jpg"}")}" style="width:240px;height:240px;border:0;"/></a>
                 <br>
                 <h4>${drinks[0].name}</h4>
             </td>
+            </g:if>
+            <g:if test="${drinks.size() >= 2}">
             <td>
                 <a href="/drink/show/${drinks[1].id}"><img src="${resource(dir:"images", file: "${drinks[1].name + ".jpg"}")}" style="width:240px;height:240px;border:0;"/></a>
                 <br>
                 <h4>${drinks[1].name}</h4>
             </td>
+            </g:if>
+            <g:if test="${drinks.size() >= 3}">
             <td>
                 <a href="/drink/show/${drinks[2].id}"><img src="${resource(dir:"images", file: "${drinks[2].name + ".jpg"}")}" style="width:240px;height:240px;border:0;"/></a>
                 <br>
                 <h4>${drinks[2].name}</h4>
             </td>
+            </g:if>
+            <g:if test="${drinks.size() >= 4}">
             <td>
                 <a href="/drink/show/${drinks[3].id}"><img src="${resource(dir:"images", file: "${drinks[3].name + ".jpg"}")}" style="width:240px;height:240px;border:0;"/></a>
                 <br>
                 <h4>${drinks[3].name}</h4>
             </td>
+            </g:if>
         </tr>
         </tbody>
     </table>

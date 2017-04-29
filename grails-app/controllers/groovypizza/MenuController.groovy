@@ -11,11 +11,21 @@ import grails.transaction.Transactional
 @Secured('permitAll')
 class MenuController {
 
+    MenuService menuService
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     //@Secured([Role.ROLE_USER,Role.ROLE_ADMIN,Role.ROLE_ANONYMOUS])
     def menu() {
         render view: 'menu', model: [pizzas: Menu.first().pizzas, sides: Menu.first().sides, desserts: Menu.first().desserts, drinks: Menu.first().drinks]
+    }
+
+    def search() {
+        render view: 'search'
+    }
+
+    def searchItems() {
+        def maps = menuService.getSearchResults(params)
+        render view: 'menu', model:[pizzas: maps["searchedPizzas"], sides: maps["searchedSides"], desserts: maps["searchedDesserts"], drinks: maps["searchedDrinks"]]
     }
 
     protected void notFound() {

@@ -8,6 +8,7 @@ class UrlMappings {
                 // apply constraints here
             }
         }
+        "/search"(controller: "Menu", action: "search")
         "/signup"(controller: "MyOrder", action: "signup")
         "/menu"(controller: "Menu", action: "menu")
         "/mycurrentorder"(controller: "MyOrder", action: "myCurrentOrder")

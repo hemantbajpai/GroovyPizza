@@ -123,12 +123,12 @@ class BootStrap {
 
         description = "Delicious pie baked with organic blueberries"
         nutrition = new Nutrition(weight: 105, calories: 110, protein: 2,fat: 3, carbohydrate: 25, fiber: 1, sugar: 10, calcium: 2, iron: 1, magnesium: 3, potassium: 22, sodium: 100, vitaminC: 1, vitaminB6: 2, vitaminB12: 2, vitaminA: 1, vitaminD: 0, fatSaturated: 3.0, fatPoly: 1.5, fatMono: 1.5, cholesterol: 0)
-        Dessert blueberryPie = new Dessert(name:"Blueberry Pie", price: 5, description: description, nutrition: nutrition, menu: menu)
+        Dessert blueberryPie = new Dessert(name:"Blueberry Pie", price: 6, description: description, nutrition: nutrition, menu: menu)
         menu.desserts << blueberryPie
 
         description = "Rich and fudgy chocolate brownies dusted with sugar"
         nutrition = new Nutrition(weight: 115, calories: 150, protein: 2,fat: 5, carbohydrate: 20, fiber: 1, sugar: 12, calcium: 2, iron: 1, magnesium: 3, potassium: 22, sodium: 150, vitaminC: 1, vitaminB6: 2, vitaminB12: 2, vitaminA: 1, vitaminD: 0, fatSaturated: 6.0, fatPoly: 3, fatMono: 3, cholesterol: 0)
-        Dessert brownies = new Dessert(name: "Brownies", price: 5, description: description, nutrition: nutrition, menu: menu)
+        Dessert brownies = new Dessert(name: "Brownies", price: 4, description: description, nutrition: nutrition, menu: menu)
         menu.desserts << brownies
 
         description = "Delicious creamy smooth cheesecake"
@@ -138,19 +138,19 @@ class BootStrap {
 
         description = "Delicious pie baked with organic strawberries"
         nutrition = new Nutrition(weight: 105, calories: 115, protein: 2,fat: 3, carbohydrate: 28, fiber: 1, sugar: 11, calcium: 2, iron: 1, magnesium: 3, potassium: 22, sodium: 110, vitaminC: 1, vitaminB6: 2, vitaminB12: 2, vitaminA: 1, vitaminD: 0, fatSaturated: 3.0, fatPoly: 1.5, fatMono: 1.5, cholesterol: 0)
-        Dessert strawberryPie = new Dessert(name:"Strawberry Pie", price: 5, description: description, nutrition: nutrition, menu: menu)
+        Dessert strawberryPie = new Dessert(name:"Strawberry Pie", price: 6, description: description, nutrition: nutrition, menu: menu)
         menu.desserts << strawberryPie
 
         description = "It is a non-alcoholic mocktail take on traditional Bellini. It has dry sparkling white grape juice, mineral water and lemon juice"
-        Drink bellaBellini = new Drink(name: "Bella Bellini", price: 6, description: description, menu: menu)
+        Drink bellaBellini = new Drink(name: "Bella Bellini", price: 4, description: description, menu: menu)
         menu.drinks << bellaBellini
 
         description = "This is a non-alcoholic mocktail, main ingredient is blue variety of Hawaiian punch called Polar Blast"
-        Drink blueShoe = new Drink(name:"Blue Shoe", price: 6, description: description, menu: menu)
+        Drink blueShoe = new Drink(name:"Blue Shoe", price: 5, description: description, menu: menu)
         menu.drinks << blueShoe
 
         description = "This is a non-alcoholic mocktail, It has no vodka and it has peach nectar"
-        Drink cuddlesOnTheBeach = new Drink(name: "Cuddles On The Beach", price: 6, description: description, menu: menu)
+        Drink cuddlesOnTheBeach = new Drink(name: "Cuddles On The Beach", price: 5, description: description, menu: menu)
         menu.drinks << cuddlesOnTheBeach
 
         description = "This is frutiy drink featuring passion fruit syrup and lime, it replaces rum with passion fruit and other juices"
