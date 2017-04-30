@@ -15,8 +15,13 @@ class MenuServiceSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "Test the getSearchResults return correct output" () {
+        when:"The menu is created"
+            def menu = new Menu(pizzas: [], sides: [], desserts: [], drinks: [])
+        then: "Call the servie"
+            service.getSearchResults({}, menu).searchedDesserts.size() == 0
+            service.getSearchResults({}, menu).searchedSides.size() == 0
+            service.getSearchResults({}, menu).searchedPizzas.size() == 0
+            service.getSearchResults({}, menu).searchedDrinks.size() == 0
     }
 }

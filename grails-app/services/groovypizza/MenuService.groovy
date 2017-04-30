@@ -5,10 +5,10 @@ import grails.transaction.Transactional
 @Transactional
 class MenuService {
 
-    def static getSearchResults(params) {
+    def static getSearchResults(params, menu) {
 
         def  searchedPizzas = []
-         Menu.first().pizzas.each { pizza ->
+         menu.pizzas.each { pizza ->
             if(params.lowPrice && pizza.price <= 10) {
                 if(!searchedPizzas.contains(pizza))
                     searchedPizzas.add(pizza)
@@ -285,7 +285,7 @@ class MenuService {
          }
 
         def searchedSides = []
-        Menu.first().sides.each { side ->
+        menu.sides.each { side ->
             if(params.lowPrice && side.price == 5) {
                 if(!searchedSides.contains(side))
                     searchedSides.add(side)
@@ -562,7 +562,7 @@ class MenuService {
         }
 
         def searchedDesserts = []
-        Menu.first().desserts.each { dessert ->
+        menu.desserts.each { dessert ->
             if(params.lowPrice && dessert.price == 4) {
                 if(!searchedDesserts.contains(dessert))
                     searchedDesserts.add(dessert)
@@ -716,7 +716,7 @@ class MenuService {
         }
 
         def searchedDrinks = []
-        Menu.first().drinks.each { drink ->
+        menu.drinks.each { drink ->
             if(params.lowPrice && drink.price == 4) {
                 if(!searchedDrinks.contains(drink))
                     searchedDrinks.add(drink)

@@ -5,7 +5,6 @@ class Pizza {
     String name
     String description
     String type
-    List<Topping> toppingList
     Nutrition nutrition
     int price
 
