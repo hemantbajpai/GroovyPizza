@@ -30,6 +30,9 @@
                     <li><a href="/menu">Menu</a></li>
                     <li><a href="/search">Search</a></li>
                     <li><a href="/mycurrentorder">My Order</a></li>
+                    <sec:ifLoggedIn>
+                        <li><a href="/orderhistory">Order History</a></li>
+                    </sec:ifLoggedIn>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <sec:ifLoggedIn>
