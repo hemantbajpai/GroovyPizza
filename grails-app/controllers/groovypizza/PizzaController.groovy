@@ -20,6 +20,7 @@ class PizzaController {
         respond pizza
     }
 
+    @Secured([Role.ROLE_ADMIN])
     def rejectFeedback (Feedback feedback) {
         feedback.pending = false
         feedback.approved = false;
@@ -27,6 +28,7 @@ class PizzaController {
         render feedback as JSON
     }
 
+    @Secured([Role.ROLE_ADMIN])
     def approveFeedback (Feedback feedback) {
         feedback.pending = false
         feedback.approved = true;

@@ -18,6 +18,7 @@ class SideController {
         respond side
     }
 
+    @Secured([Role.ROLE_ADMIN])
     def rejectFeedback (Feedback feedback) {
         feedback.pending = false
         feedback.approved = false;
@@ -25,6 +26,7 @@ class SideController {
         render feedback as JSON
     }
 
+    @Secured([Role.ROLE_ADMIN])
     def approveFeedback (Feedback feedback) {
         feedback.pending = false
         feedback.approved = true;
