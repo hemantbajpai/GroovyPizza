@@ -159,12 +159,187 @@ class MenuIntegrationSpec extends Specification {
             Drink hurricaneMocktail = new Drink(name: "Hurricane Mocktail", price: 6, description: description, menu: menu, feedbacks: [])
             menu.drinks << hurricaneMocktail
 
-            //menu.save(flush:true,failOnError:true)
+            def params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:true, nonveg: true, lowRating:false, mediumRating: false, highRating: false, nutrition:"calories", lowNutrition:false, mediumNutrition:false, highNutrition:false]
         then:"test model"
-            def params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:true, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"calories", lowNutrition:false, mediumNutrition:false, highNutrition:false]
-            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 4
-            MenuService.getSearchResults(params, menu).searchedSides.size() == 4
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
             MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
             MenuService.getSearchResults(params, menu).searchedDrinks.size() == 4
+
+        when:
+            params = [lowPrice:true, mediumPrice: true, highPrice: true, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"calories", lowNutrition:false, mediumNutrition:false, highNutrition:false]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 4
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:true, mediumRating: true, highRating: true, nutrition:"calories", lowNutrition:false, mediumNutrition:false, highNutrition:false]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 4
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"calories", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"protein", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"fat", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"carbohydrate", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"fiber", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"sugar", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"calcium", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"iron", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"magnesium", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"potassium", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"sodium", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"vitaminC", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"vitaminB6", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"vitaminB12", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"vitaminA", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"vitaminD", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"fatSaturated", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"fatMono", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"fatPoly", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
+
+        when:
+            params = [lowPrice:false, mediumPrice: false, highPrice: false, veg:false, nonveg: false, lowRating:false, mediumRating: false, highRating: false, nutrition:"cholesterol", lowNutrition:true, mediumNutrition:true, highNutrition:true]
+        then:"test model"
+            MenuService.getSearchResults(params, menu).searchedPizzas.size() == 12
+            MenuService.getSearchResults(params, menu).searchedSides.size() == 8
+            MenuService.getSearchResults(params, menu).searchedDesserts.size() == 4
+            MenuService.getSearchResults(params, menu).searchedDrinks.size() == 0
     }
 }

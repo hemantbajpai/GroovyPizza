@@ -99,4 +99,12 @@ class DessertSpec extends Specification {
         then:
             dessert.validate()
     }
+
+    void "calling getFeedback method" () {
+        when:
+            Dessert dessert = new Dessert(name: "name", description: "description", price: -1, menu : new Menu(), nutrition: new Nutrition(), feedbacks: [])
+            dessert.save(flush: true)
+        then:
+            dessert.getFeedbackRating() == 5
+    }
 }

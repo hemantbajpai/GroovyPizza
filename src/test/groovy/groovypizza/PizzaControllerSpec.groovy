@@ -1,6 +1,7 @@
 package groovypizza
 
 import grails.test.mixin.*
+import order.User
 import spock.lang.*
 
 @TestFor(PizzaController)
@@ -10,7 +11,7 @@ class PizzaControllerSpec extends Specification {
     def populateValidParams(params) {
         assert params != null
 
-        params << [name:"pizza", description: "description", type: "veg", price: 5,nutrition: new Nutrition(), menu: new Menu()]
+        params << [name:"pizza", description: "description", type: "veg", price: 5,nutrition: new Nutrition(), menu: new Menu(), feedbacks: []]
     }
 
     void "Test that the show action returns the correct model"() {

@@ -225,7 +225,7 @@ class MenuService {
                      if (!searchedPizzas.contains(pizza))
                          searchedPizzas.add(pizza)
                  }
-                 if(nutrition == "sugar" && value > 3.8) {
+                 if(nutrition == "sugar" && value > 3.7) {
                      if (!searchedPizzas.contains(pizza))
                          searchedPizzas.add(pizza)
                  }
@@ -611,7 +611,7 @@ class MenuService {
                     if (!searchedDesserts.contains(dessert))
                         searchedDesserts.add(dessert)
                 }
-                if(nutrition == "fiber" && value < 1) {
+                if(nutrition == "fiber" && value <= 1) {
                     if (!searchedDesserts.contains(dessert))
                         searchedDesserts.add(dessert)
                 }

@@ -117,4 +117,12 @@ class PizzaSpec extends Specification {
         then:
             pizza.validate()
     }
+
+    void "calling getFeedback method" () {
+        when:
+            Pizza pizza = new Pizza(name: "name", description: "description",  price: 5,type: "veg", menu : new Menu(), nutrition: new Nutrition(), feedbacks: [])
+            pizza.save(flush: true)
+        then:
+            pizza.getFeedbackRating() == 5
+    }
 }

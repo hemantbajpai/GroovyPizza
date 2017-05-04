@@ -86,4 +86,12 @@ class DrinkSpec extends Specification {
         then:
             drink.validate()
     }
+
+    void "calling getFeedback method" () {
+        when:
+            Drink drink = new Drink(name: "name",description: "description", price: -1, menu: new Menu(), feedbacks: [] )
+            drink.save(flush: true)
+        then:
+            drink.getFeedbackRating() == 5
+    }
 }

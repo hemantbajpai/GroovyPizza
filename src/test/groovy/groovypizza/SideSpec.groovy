@@ -117,4 +117,12 @@ class SideSpec extends Specification {
         then:
             side.validate()
     }
+
+    void "calling getFeedback method" () {
+        when:
+            Side side = new Side(name: "name", description: "description", price:-1,type: "veg", menu : new Menu(), nutrition: new Nutrition(), feedbacks: [])
+            side.save(flush: true)
+        then:
+            side.getFeedbackRating() == 5
+    }
 }
