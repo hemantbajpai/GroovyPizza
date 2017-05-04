@@ -15,7 +15,7 @@
     <br>
     <br>
     <div style="text-align: center;">
-        <asset:image src="pizza.jpg" style="width:1023px;height:480px;border:0;" class="img-fluid"/>
+        <asset:image src="pizza.jpg" style="width:600px;height:500px;border:0;" class="img-fluid"/>
     </div>
     <br>
     <br>
