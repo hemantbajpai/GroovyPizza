@@ -38,7 +38,7 @@ class PizzaController {
 
     def publishFeedack() {
 
-        def user = User.get(springSecurityService.principal.id)
+        def user = springSecurityService.getCurrentUser()
         Pizza pizza = Pizza.get(params.id)
         def feedback = new PizzaFeedback(rating: params.rating, text:params.text, dateCreated:new Date(), user:user, approved:false, pending:true, pizza: pizza)
 

@@ -36,7 +36,7 @@ class DrinkController {
 
     def publishFeedack() {
 
-        def user = User.get(springSecurityService.principal.id)
+        def user = springSecurityService.getCurrentUser()
         Drink drink = Drink.get(params.id)
         def feedback = new DrinkFeedback(rating: params.rating, text:params.text, dateCreated:new Date(), user:user, approved:false, pending:true, drink: drink)
 

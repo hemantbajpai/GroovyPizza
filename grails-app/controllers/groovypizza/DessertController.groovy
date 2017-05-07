@@ -36,7 +36,7 @@ class DessertController {
 
     def publishFeedack() {
 
-        def user = User.get(springSecurityService.principal.id)
+        def user = springSecurityService.getCurrentUser()
         Dessert dessert = Dessert.get(params.id)
         def feedback = new DessertFeedback(rating: params.rating, text:params.text, dateCreated:new Date(), user:user, approved:false, pending:true, dessert: dessert)
 

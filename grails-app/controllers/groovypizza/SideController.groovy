@@ -36,7 +36,7 @@ class SideController {
 
     def publishFeedack() {
 
-        def user = User.get(springSecurityService.principal.id)
+        def user = springSecurityService.getCurrentUser()
         Side side = Side.get(params.id)
         def feedback = new SideFeedback(rating: params.rating, text:params.text, dateCreated:new Date(), user:user, approved:false, pending:true, side: side)
 
